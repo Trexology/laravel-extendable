@@ -39,8 +39,9 @@ php artisan migrate
 Add model trait to models, where you want to use custom fields.
 
 ```php
+use Trexology\Extendable\Traits\Extendable;
 class Article extends \Illuminate\Database\Eloquent\Model {
-    use Trexology\Extendable\ModelTrait;
+    use Extendable;
 }
 ```
 

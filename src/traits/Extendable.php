@@ -6,18 +6,18 @@
  * Time: 13:19
  */
 
-namespace Trexology\Extendable;
+namespace Trexology\Extendable\Traits;
 
-use Trexology\Extendable\CustomFieldConfigProvider;
+use Trexology\Extendable\Providers\CustomFieldConfigProvider;
 
-trait ModelTrait
+trait Extendable
 {
     public $customAttributes = [];
 
     /**
      * Boot trait
      */
-    public static function bootModelTrait()
+    public static function bootExtendable()
     {
         static::creating(function ($item) {
             foreach ($item->customFieldNames() as $name) {
