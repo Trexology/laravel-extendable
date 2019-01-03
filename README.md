@@ -11,7 +11,7 @@ Laravel Extendable package
 ### Composer Install
 
 ```sh
-composer require trexology/laravel-extendable
+composer require trexology/extendable
 ```
 
 ### Laravel Service Provider (not required for laravel version above 5.5)
