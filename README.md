@@ -1,9 +1,9 @@
 Laravel Extendable package
 ==========================
 
-[![License](https://img.shields.io/github/license/ironsharkde/laravel-extendable.svg)](https://packagist.org/packages/ironshark/laravel-extendable)
-[![Downloads](https://img.shields.io/packagist/dt/ironshark/laravel-extendable.svg)](https://packagist.org/packages/ironshark/laravel-extendable)
-[![Version-stable](https://img.shields.io/packagist/v/ironshark/laravel-extendable.svg)](https://packagist.org/packages/ironshark/laravel-extendable)
+[![License](https://img.shields.io/github/license/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
+[![Downloads](https://img.shields.io/packagist/dt/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
+[![Version-stable](https://img.shields.io/packagist/v/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
 
 
 ## How to install
@@ -11,16 +11,16 @@ Laravel Extendable package
 ### Composer Install
 
 ```sh
-composer require ironshark/laravel-extendable
+composer require trexology/laravel-extendable
 ```
 
-### Laravel Service Provider
+### Laravel Service Provider (not required for laravel version above 5.5)
 
 Add service provider in `app/config/app.php`
 
 ```php
 'providers' => [
-    IronShark\Extendable\ExtendableServiceProvider::class,
+    Trexology\Extendable\ExtendableServiceProvider::class,
 ];
 ```
 
@@ -28,7 +28,7 @@ Add service provider in `app/config/app.php`
 Publish configs, templates and run migrations.
 
 ```php
-php artisan vendor:publish --provider="IronShark\Extendable\ExtendableServiceProvider"
+php artisan vendor:publish --provider="Trexology\Extendable\ExtendableServiceProvider"
 php artisan migrate
 ```
 
@@ -36,11 +36,11 @@ php artisan migrate
 
 ### Add traits
 
-Add model trait to models, where you wat to use custom fields.
+Add model trait to models, where you want to use custom fields.
 
 ```php
 class Article extends \Illuminate\Database\Eloquent\Model {
-    use IronShark\Extendable\ModelTrait;
+    use Trexology\Extendable\ModelTrait;
 }
 ```
 
@@ -53,7 +53,7 @@ return [
     'App\Room' => [                                                     // model name
         'light' => [                                                    // field name
             'title' => 'Light',                                         // field title (can be used in views)
-            'type' => \IronShark\Extendable\CustomFieldType::Radio,     // field type
+            'type' => \Trexology\Extendable\CustomFieldType::Radio,     // field type
             'options' => [                                              // possible values/labels
                 0 => 'Off',
                 1 => 'On'
@@ -64,7 +64,7 @@ return [
 ];
 ```
 
-### Assign/retrieve customfield values 
+### Assign/retrieve customfield values
 
 Assign custom field values as regular values.
 
@@ -89,6 +89,7 @@ echo $article->recomended;   // 1
 
 ### Field types
 
+|---------------------------|--------------|-----------------------|
 | FieldType                 | DB DataType  | Example               |
 |---------------------------|--------------|-----------------------|
 | CustomFieldType::String   | VARCHAR(255) | `Lorem`               |

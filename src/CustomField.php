@@ -1,9 +1,9 @@
 <?php
 
-namespace IronShark\Extendable;
+namespace Trexology\Extendable;
 
 use Illuminate\Database\Eloquent\Model;
-use IronShark\Extendable\CustomFieldConfigProvider;
+use Trexology\Extendable\CustomFieldConfigProvider;
 
 class CustomField extends Model
 {
@@ -24,7 +24,7 @@ class CustomField extends Model
      */
     public function getAttributeName()
     {
-        return CustomFieldConfigProvider::fieldType($this->parent_type, $this->field_name);
+        return CustomFieldConfigProvider::fieldType($this->entity_type, $this->field_name);
     }
 
 

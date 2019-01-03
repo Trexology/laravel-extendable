@@ -6,9 +6,9 @@
  * Time: 13:19
  */
 
-namespace IronShark\Extendable;
+namespace Trexology\Extendable;
 
-use IronShark\Extendable\CustomFieldConfigProvider;
+use Trexology\Extendable\CustomFieldConfigProvider;
 
 trait ModelTrait
 {
@@ -74,7 +74,7 @@ trait ModelTrait
      */
     public function customFieldRelation($fieldName)
     {
-        return $this->morphOne('IronShark\Extendable\CustomField', 'parent', 'parent_type')
+        return $this->morphOne('Trexology\Extendable\CustomField', 'parent', 'entity_type')
             ->where('field_name', $fieldName);
     }
 
@@ -209,8 +209,8 @@ trait ModelTrait
         // delete custom fields
         if ($parentResult) {
             CustomField::where([
-                'parent_type' => get_class($this),
-                'parent_id' => $this->id
+                'entity_type' => get_class($this),
+                'entity_id' => $this->id
             ])->delete();
         }
 
@@ -240,8 +240,8 @@ trait ModelTrait
     {
         return new CustomField([
             'field_name' => $fieldName,
-            'parent_type' => get_class($this),
-            'parent_id' => $this->id
+            'entity_type' => get_class($this),
+            'entity_id' => $this->id
         ]);
     }
 
@@ -277,8 +277,8 @@ trait ModelTrait
 
         if ($model === null && $this->exists) {
             $model = CustomField::where([
-                'parent_type' => get_class($this),
-                'parent_id' => $this->id,
+                'entity_type' => get_class($this),
+                'entity_id' => $this->id,
                 'field_name' => $fieldName
             ])->first();
         }

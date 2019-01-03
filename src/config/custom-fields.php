@@ -24,7 +24,7 @@ return [
     'App\Room' => [
         'light' => [
             'title' => 'Light',
-            'type' => \IronShark\Extendable\CustomFieldType::Radio,
+            'type' => \Trexology\Extendable\CustomFieldType::Radio,
             'options' => [
                 0 => 'Off',
                 1 => 'On'
