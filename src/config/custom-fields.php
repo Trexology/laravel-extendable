@@ -21,15 +21,15 @@ return [
 
 
     /*
-    'App\Room' => [
-        'light' => [
-            'title' => 'Light',
-            'type' => \Trexology\Extendable\CustomFieldType::Radio,
-            'options' => [
+    'App\Room' => [                                                 // model name
+        'light' => [                                                // field name
+            'title' => 'Light',                                     // field title (can be used in views)
+            'type' => \Trexology\Extendable\CustomFieldType::Radio, // field type
+            'options' => [                                          // possible values/labels
                 0 => 'Off',
                 1 => 'On'
             ],
-            'default' => 1
+            'default' => 1                                          // default value
         ]
     ]
     */

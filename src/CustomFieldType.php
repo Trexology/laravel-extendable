@@ -16,5 +16,5 @@ class CustomFieldType
     const Radio = "radio";
     const Checkbox = "checkbox";
     const DateTime = "datetime";
-    const Boolean = "boolean";
+    const Boolean = "number";
 }
