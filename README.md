@@ -20,7 +20,7 @@ Add service provider in `app/config/app.php`
 
 ```php
 'providers' => [
-    Trexology\Extendable\ExtendableServiceProvider::class,
+    Trexology\Extendable\Providers\ExtendableServiceProvider::class,
 ];
 ```
 
@@ -28,7 +28,7 @@ Add service provider in `app/config/app.php`
 Publish configs, templates and run migrations.
 
 ```php
-php artisan vendor:publish --provider="Trexology\Extendable\ExtendableServiceProvider"
+php artisan vendor:publish --provider="Trexology\Extendable\Providers\ExtendableServiceProvider"
 php artisan migrate
 ```
 

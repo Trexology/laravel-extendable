@@ -9,6 +9,7 @@
 namespace Trexology\Extendable\Traits;
 
 use Trexology\Extendable\Providers\CustomFieldConfigProvider;
+use Trexology\Extendable\CustomField;
 
 trait Extendable
 {
