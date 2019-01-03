@@ -12,14 +12,20 @@ use Illuminate\Support\ServiceProvider;
 
 class ExtendableServiceProvider extends ServiceProvider
 {
-    protected $defer = true;
+    // protected $defer = true;
 
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/migrations/2015_07_23_134516_create_custom_fields_table.php' => database_path('migrations/2015_07_23_134516_create_custom_fields_table.php'),
-            __DIR__.'/config/custom-fields.php' => config_path('custom-fields.php'),
-        ]);
+
+      // Publish migrations
+      $this->publishes([
+          __DIR__.'/../migrations/' => database_path('migrations')
+      ], 'migrations');
+
+      // Publish configuration
+      $this->publishes([
+          __DIR__.'/../config/custom-fields.php' => config_path('custom-fields.php'),
+      ], 'config');
     }
 
     public function register()
