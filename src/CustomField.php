@@ -3,7 +3,7 @@
 namespace Trexology\Extendable;
 
 use Illuminate\Database\Eloquent\Model;
-use Trexology\Extendable\CustomFieldConfigProvider;
+use Trexology\Extendable\Providers\CustomFieldConfigProvider;
 
 class CustomField extends Model
 {

@@ -51,15 +51,15 @@ Use `app/config/custom-fields.php` to configure your fields.
 
 ```php
 return [
-    'App\Room' => [                                                     // model name
-        'light' => [                                                    // field name
-            'title' => 'Light',                                         // field title (can be used in views)
+    'App\User' => [                                                     // model name
+        'gender' => [                                                    // field name
+            'title' => 'Gender',                                         // field title (can be used in views)
             'type' => \Trexology\Extendable\CustomFieldType::Radio,     // field type
             'options' => [                                              // possible values/labels
-                0 => 'Off',
-                1 => 'On'
+                'male' => 'Male',
+                'female' => 'Female'
             ],
-            'default' => 1                                              // default value
+            'default' => 'male'                                              // default value
         ]
     ]
 ];
@@ -72,7 +72,7 @@ Assign custom field values as regular values.
 ```php
 $data = [
     'title' => 'Awesome Article!!!', // regular field
-    'recomended' => 1                // custom filed     
+    'gender' => 'male'               // custom filed     
 ];
 
 $article = new Article();
@@ -84,13 +84,14 @@ Retrieve custom field values.
 
 ```php
 $article = Article::find(1);
-$article->recomended->value; // 1
-echo $article->recomended;   // 1
+$article->gender->value; // 1
+echo $article->gender;   // 1
+
+$article->customFields; // return collection of custom fields
 ```
 
 ### Field types
 
-|---------------------------|--------------|-----------------------|
 | FieldType                 | DB DataType  | Example               |
 |---------------------------|--------------|-----------------------|
 | CustomFieldType::String   | VARCHAR(255) | `Lorem`               |

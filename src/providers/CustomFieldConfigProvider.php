@@ -46,6 +46,8 @@ class CustomFieldConfigProvider
                 return 'textvalue';
             case CustomFieldType::DateTime:
                 return 'datetime';
+            case CustomFieldType::Boolean:
+                return 'number';
             default:
                 return 'stringvalue';
         }

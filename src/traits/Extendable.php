@@ -90,6 +90,16 @@ trait Extendable
         return CustomFieldConfigProvider::fieldNames(get_class($this));
     }
 
+    /**
+     * Return all custom field for current model
+     *
+     * @return array
+     */
+    public function customFields()
+    {
+        return $this->morphMany('Trexology\Extendable\CustomField', 'entity');
+    }
+
 
     /**
      * Return true if attribute name belongs to fields.
