@@ -1,5 +1,5 @@
 {
-    "name": "ironshark/laravel-extendable",
+    "name": "trexology/extendable",
     "description": "Traits for Laravel to add and manage custom Eloquent model fields.",
     "keywords": ["trait", "laravel", "eloquent", "extendable", "custom fields"],
     "type": "library",
@@ -12,13 +12,22 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Anton Pauli",
-            "email": "pauli@ironshark.de"
+            "name": "Trex Lim ",
+            "email": "random404s@techie.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "IronShark\\Extendable\\": "src/"
+            "Trexology\\Extendable\\": "src/"
         }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Trexology\\Contactable\\Providers\\ExtendableServiceProvider"
+        ],
+        "aliases": {
+        }
+      }
     }
 }
