@@ -16,14 +16,13 @@ class CreateCustomFieldsTable extends Migration
         Schema::create('custom_fields', function (Blueprint $table) {
             $table->increments('id');
             $table->string('field_name', 255);
-            $table->string('parent_type', 255);
-            $table->unsignedInteger('parent_id');
+            $table->morphs('entity');
             $table->string('stringvalue', 255)->nullable();
             $table->double('numbervalue')->nullable();
             $table->text('textvalue')->nullable();
             $table->timestamp('datevalue')->nullable();
 
-            $table->unique(['field_name', 'parent_type', 'parent_id']);
+            $table->unique(['field_name', 'entity_type', 'entity_id']);
         });
     }
 

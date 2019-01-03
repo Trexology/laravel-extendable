@@ -6,9 +6,9 @@
  * Time: 18:35
  */
 
-namespace IronShark\Extendable;
+namespace Trexology\Extendable\Providers;
 
-use IronShark\Extendable\CustomFieldType;
+use Trexology\Extendable\CustomFieldType;
 
 class CustomFieldConfigProvider
 {

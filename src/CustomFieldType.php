@@ -6,7 +6,7 @@
  * Time: 13:26
  */
 
-namespace IronShark\Extendable;
+namespace Trexology\Extendable;
 
 class CustomFieldType
 {
@@ -16,4 +16,5 @@ class CustomFieldType
     const Radio = "radio";
     const Checkbox = "checkbox";
     const DateTime = "datetime";
+    const Boolean = "boolean";
 }

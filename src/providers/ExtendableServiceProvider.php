@@ -6,7 +6,7 @@
  * Time: 14:09
  */
 
-namespace IronShark\Extendable;
+namespace Trexology\Extendable\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
