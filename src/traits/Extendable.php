@@ -98,6 +98,7 @@ trait Extendable
     public function customFields()
     {
         return $this->morphMany('Trexology\Extendable\CustomField', 'entity');
+        // ->select(['field_name', 'value']);
     }
 
 
@@ -166,9 +167,11 @@ trait Extendable
         // save custom fields
         foreach ($this->customFieldNames() as $name) {
             // custom field model instance
-            $customFieldModel = $this->getCustomFieldModel($name);
-            $customFieldModel->value = isset($this->customAttributes[$name]) ? $this->customAttributes[$name] : null;
-            $customFieldModel->save();
+            if (isset($this->customAttributes[$name])) {
+              $customFieldModel = $this->getCustomFieldModel($name);
+              $customFieldModel->value = $this->customAttributes[$name];
+              $customFieldModel->save();
+            }
         }
 
         return $parentResult;
