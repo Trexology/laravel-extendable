@@ -66,4 +66,30 @@ class CustomField extends Model
     {
         return (string)$this->value;
     }
+
+    public function printCustomField()
+    {
+      $fieldConfigs = CustomFieldConfigProvider::customFieldConfigs($this->entity_type);
+
+      switch ($fieldConfigs[$this->field_name]['type']) {
+          case CustomFieldType::Checkbox:
+              return "<input></input>";
+          case CustomFieldType::Select:
+              return "<input></input>";
+          case CustomFieldType::String:
+              return "<input></input>";
+          case CustomFieldType::Radio:
+              return 'stringvalue';
+          case CustomFieldType::Text:
+              return 'textvalue';
+          case CustomFieldType::DateTime:
+              return 'datetime';
+          case CustomFieldType::Boolean:
+              return 'number';
+          default:
+              return "<input></input>";
+
+          // TODO: handled the different UI output for different type
+      }
+    }
 }
