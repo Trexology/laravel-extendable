@@ -1,9 +1,9 @@
 Laravel Extendable package
 ==========================
 
-[![License](https://img.shields.io/github/license/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
-[![Downloads](https://img.shields.io/packagist/dt/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
-[![Version-stable](https://img.shields.io/packagist/v/trexology/laravel-extendable.svg)](https://packagist.org/packages/trexology/laravel-extendable)
+[![License](https://img.shields.io/github/license/trexology/extendable.svg)](https://packagist.org/packages/trexology/extendable)
+[![Downloads](https://img.shields.io/packagist/dt/trexology/extendable.svg)](https://packagist.org/packages/trexology/extendable)
+[![Version-stable](https://img.shields.io/packagist/v/trexology/extendable.svg)](https://packagist.org/packages/trexology/extendable)
 
 
 ## How to install
